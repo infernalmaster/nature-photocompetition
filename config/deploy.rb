@@ -1,21 +1,21 @@
 # require "bundler/capistrano"
 
-set :application, "photo"
-set :repository,  "https://github.com/infernalmaster/photo-competition.git"
+set :application, "nature-photocompetition"
+set :repository,  "https://github.com/infernalmaster/nature-photocompetition.git"
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "159.89.96.34"                          # Your HTTP server, Apache/etc
-role :app, "159.89.96.34"                          # This may be the same as your `Web` server
-role :db,  "159.89.96.34", :primary => true # This is where Rails migrations will run
+role :web, "46.101.142.76"                          # Your HTTP server, Apache/etc
+role :app, "46.101.142.76"                          # This may be the same as your `Web` server
+role :db,  "46.101.142.76", :primary => true # This is where Rails migrations will run
 
-set :user, 'deploy'
+set :user, 'rails'
 set :use_sudo, false
 set :bundle_without,  [:development, :test]
 # set :bundle_dir,      File.join(fetch(:shared_path), 'gems')
 
-set :deploy_to, '/home/deploy/photo'
+set :deploy_to, '/home/rails/nature-photocompetition'
 set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 
