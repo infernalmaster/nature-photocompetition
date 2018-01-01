@@ -21,10 +21,7 @@ group :production do
   gem 'unicorn'
 end
 group :development do
-  # gem 'capistrano', '~> 2.15.5'
-  gem 'capistrano', '~> 3.0', require: false
-  gem 'capistrano-bundler', '~> 1.1', require: false
-  gem 'capistrano-rvm'
+  gem 'capistrano', '~> 2.15.5'
 end
 
 # group :test do
