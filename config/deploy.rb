@@ -1,28 +1,13 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.10.1"
+lock '~> 3.10.1'
 
 set :application, 'nature-photocompetition'
-set :repo_url, "https://github.com/infernalmaster/nature-photocompetition.git"
+set :repo_url, 'https://github.com/infernalmaster/nature-photocompetition.git'
 
 # ssh_options = {keys: ["#{ENV['HOME']}/.ssh/dev.pem"], forward_agent: true}
 
-# role :web, '159.89.30.17'                          # Your HTTP server, Apache/etc
-# role :app, '159.89.30.17'                          # This may be the same as your `Web` server
-# role :db,  '159.89.30.17', primary: true # This is where Rails migrations will run
-
 server '138.68.70.48', user: 'root', roles: %w[web app db], primary: true
 
-
-# # set :user, 'root'
-# # set :use_sudo, false
-# set :bundle_without, %i[development test]
-# # set :bundle_dir,      File.join(fetch(:shared_path), 'gems')
-
-# set :deploy_to, "/home/#{fetch :user}/#{fetch :application}"
-# set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
-# set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
-
-# set :unicorn_start_cmd, "(cd #{deploy_to}/current; bundle exec unicorn -E production -Dc #{fetch :unicorn_conf})"
 
 # # set :default_environment, 'PATH' => '$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH'
 
@@ -40,31 +25,41 @@ server '138.68.70.48', user: 'root', roles: %w[web app db], primary: true
 # end
 # after 'deploy:update_code', :copy_settings, :copy_db
 
-# # set (:bundle_cmd) { "#{release_path}/bin/bundle" }
-# # set :bundle_flags, "--deployment --quiet --binstubs"
 
-# # - for unicorn - #
-# namespace :deploy do
-#   desc 'Start application'
-#   task :start, roles: :app do
-#     run unicorn_start_cmd
-#   end
+set :unicorn_start_cmd, "(cd #{deploy_to}/current; bundle exec unicorn -E production -Dc #{fetch(:unicorn_conf)})"
+set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
+set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 
-#   desc 'Stop application'
-#   task :stop, roles: :app do
-#     run "[ -f #{fetch :unicorn_pid} ] && kill -QUIT `cat #{fetch :unicorn_pid}`"
-#   end
+# - for unicorn - #
+namespace :deploy do
+  desc 'Start application'
+  task :start do
+    on roles(:app) do
+      run unicorn_start_cmd
+    end
+  end
 
-#   desc 'Restart Application'
-#   task :restart, roles: :app do
-#     run "[ -f #{fetch :unicorn_pid} ] && kill -USR2 `cat #{fetch :unicorn_pid}` || #{fetch :unicorn_start_cmd}"
-#   end
-# end
+  desc 'Stop application'
+  task :stop do
+    on roles(:app) do
+      run "[ -f #{fetch :unicorn_pid} ] && kill -QUIT `cat #{fetch(:unicorn_pid)}`"
+    end
+  end
 
-# desc 'Use datamapper to call autoupgrade instead of db:migrate.'
-# task :migrate, roles: :app do
-#   run "cd #{deploy_to}/current; bundle exec rake db:migrate RACK_ENV=production"
-# end
+  desc 'Restart Application'
+  task :restart do
+    on roles(:app) do
+      run "[ -f #{fetch :unicorn_pid} ] && kill -USR2 `cat #{fetch(:unicorn_pid)}` || #{fetch(:unicorn_start_cmd)}"
+    end
+  end
+end
+
+desc 'Use datamapper to call autoupgrade instead of db:migrate.'
+task :migrate do
+  on roles(:app) do
+    run "cd #{deploy_to}/current; bundle exec rake db:migrate RACK_ENV=production"
+  end
+end
 
 
 
