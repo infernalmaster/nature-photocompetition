@@ -1,5 +1,5 @@
 
-DEPLOY_TO = '/home/deploy/photo'
+DEPLOY_TO = '/home/root/nature-photocompetition'
 CURRENT = "#{DEPLOY_TO}/current"
 UNICORN_PID = "#{DEPLOY_TO}/shared/pids/unicorn.pid"
 # Preload application code before forking worker processes.

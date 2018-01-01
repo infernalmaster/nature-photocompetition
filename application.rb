@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
@@ -24,11 +26,10 @@ get '/' do
   haml :root
 end
 
-
 post '/save_profile' do
   Profile.get(session[:user_id]).try :destroy if session[:user_id]
 
-  profile = Profile.new({
+  profile = Profile.new(
     name: params[:name],
     surname: params[:surname],
     zip_code: params[:zip_code],
@@ -41,7 +42,7 @@ post '/save_profile' do
     position: params[:position],
     skype: params[:skype],
     facebook: params[:facebook]
-  })
+  )
 
   if profile.save
     session[:user_id] = profile.id.to_i
@@ -50,14 +51,12 @@ post '/save_profile' do
     status 406
     profile.errors.values.join(', ')
   end
-
 end
 
 post '/upload' do
-
   profile = Profile.get session[:user_id]
 
-  if !profile
+  unless profile
     status 406
     return 'Не знайдено профіль'
   end
@@ -66,12 +65,12 @@ post '/upload' do
 
   position = 1
   5.times do |i|
-    next if !params["image#{i}"]
-    profile.photos << Photo.new({
+    next unless params["image#{i}"]
+    profile.photos << Photo.new(
       file:  params["image#{i}"],
       title: params["title#{i}"] || "фото #{i}",
       position: position
-    })
+    )
     position += 1
   end
 
@@ -83,20 +82,19 @@ post '/upload' do
     er_message = profile.errors.values.join(', ')
     er_message || 'Перевірте розширення та розміри файлів'
   end
-
 end
 
-post "/payment/:id" do
+post '/payment/:id' do
   @profile = Profile.get params[:id].to_i
-  if @profile.signature_valid?( params[:signature], params[:data] )
+  if @profile.signature_valid?(params[:signature], params[:data])
     @profile.paid = true
     @profile.save
-    @status = JSON.parse( Base64.decode64( params[:data] ) )['status']
-    Pony.mail({
+    @status = JSON.parse(Base64.decode64(params[:data]))['status']
+    Pony.mail(
       from: SiteConfig.smtp_from,
       to: SiteConfig.smtp_to,
       subject: "Реєстрація #{@profile.name} #{@profile.surname}",
-      html_body: ( haml :email ),
+      html_body: (haml :email),
       via: :smtp,
       via_options: {
         address:               SiteConfig.smtp_server,
@@ -107,7 +105,7 @@ post "/payment/:id" do
         authentication:        :plain, # :plain, :login, :cram_md5, no auth by default
         domain:                SiteConfig.smtp_domain # the HELO domain provided by the client to the server
       }
-    })
+    )
   end
 end
 

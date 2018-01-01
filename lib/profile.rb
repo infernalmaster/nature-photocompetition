@@ -7,6 +7,7 @@ class Profile
   property :surname,        String
 
   property :zip_code,       String
+  property :region,         String
   property :city,           String
   property :address,        String
   property :phone,          String
@@ -23,9 +24,10 @@ class Profile
   property :updated_at,     DateTime
 
   has n, :photos
-  validates_presence_of :photos, when: [ :with_photos ]
+  validates_presence_of :photos, when: [:with_photos]
 
-  validates_presence_of :name, :surname, :zip_code, :city, :address, :phone, :email
+  validates_presence_of :name, :surname, :region, :zip_code,
+                        :city, :address, :phone, :email
 
   def payment_url
     base = request_params
@@ -58,8 +60,8 @@ class Profile
         result_url: SiteConfig.url_base,
         sandbox: SiteConfig.sandbox
       }
-      json = JSON.generate( params )
-      Base64.encode64( json ).gsub("\n",'')
+      json = JSON.generate(params)
+      Base64.encode64(json).gsub("\n",'')
     end
 
     def order_id
@@ -68,7 +70,7 @@ class Profile
 
     def signature(data)
       key = SiteConfig.pb_private_key + data + SiteConfig.pb_private_key
-      key = Digest::SHA1.digest( key )
-      Base64.encode64( key ).gsub("\n",'')
+      key = Digest::SHA1.digest(key)
+      Base64.encode64(key).gsub("\n",'')
     end
 end
