@@ -24,8 +24,7 @@ group :development do
   # gem 'capistrano', '~> 2.15.5'
   gem 'capistrano', '~> 3.0', require: false
   gem 'capistrano-bundler', '~> 1.1', require: false
-  gem 'capistrano-rbenv', '~> 2.0', require: false
-  gem 'capistrano-rbenv-install', '~> 1.2.0', require: false
+  gem 'capistrano-rvm'
 end
 
 # group :test do

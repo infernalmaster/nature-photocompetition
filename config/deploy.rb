@@ -10,14 +10,7 @@ set :repo_url, "https://github.com/infernalmaster/nature-photocompetition.git"
 # role :app, '159.89.30.17'                          # This may be the same as your `Web` server
 # role :db,  '159.89.30.17', primary: true # This is where Rails migrations will run
 
-server "159.89.30.17", user: "deploy", roles: %w[web app db]
-
-set :rbenv_type, :user # or :system, depends on your rbenv setup
-set :rbenv_ruby, File.read('.ruby-version').strip
-
-set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-set :rbenv_map_bins, %w{rake gem bundle ruby}
-set :rbenv_roles, :all # default value
+server '138.68.70.48', user: 'root', roles: %w[web app db], primary: true
 
 
 # # set :user, 'root'
@@ -34,6 +27,8 @@ set :rbenv_roles, :all # default value
 # # set :default_environment, 'PATH' => '$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH'
 
 # # set :shared_children, shared_children + %w[public/uploads]
+# append :linked_dirs, 'public/uploads'
+# append :linked_files, 'production.db', 'settings.rb'
 
 # task :copy_db, roles: :app do
 #   app_db = "#{shared_path}/production.db"
