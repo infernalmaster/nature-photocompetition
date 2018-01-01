@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# require "bundler/capistrano"
 
 set :application, 'nature-photocompetition'
 set :repository,  'https://github.com/infernalmaster/nature-photocompetition.git'
@@ -8,9 +7,9 @@ set :repository,  'https://github.com/infernalmaster/nature-photocompetition.git
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, '138.68.70.48'                          # Your HTTP server, Apache/etc
-role :app, '138.68.70.48'                          # This may be the same as your `Web` server
-role :db,  '138.68.70.48', primary: true # This is where Rails migrations will run
+role :web, '207.154.244.139'                          # Your HTTP server, Apache/etc
+role :app, '207.154.244.139'                          # This may be the same as your `Web` server
+role :db,  '207.154.244.139', primary: true # This is where Rails migrations will run
 
 set :user, 'root'
 set :use_sudo, false
@@ -18,12 +17,9 @@ set :bundle_without, %i[development test]
 # set :bundle_dir,      File.join(fetch(:shared_path), 'gems')
 
 set :deploy_to, "/home/#{user}/#{application}"
-set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
-set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 
-set :unicorn_start_cmd, "(cd #{deploy_to}/current; bundle exec unicorn -E production -Dc #{unicorn_conf})"
 
-set :default_environment, 'PATH' => '$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/local/rvm/gems/ruby-2.4.0/bin:$PATH'
+set :default_environment, 'PATH' => '$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH'
 
 set :shared_children, shared_children + ['public/uploads']
 
@@ -37,8 +33,10 @@ task :copy_settings, roles: :app do
 end
 after 'deploy:update_code', :copy_settings, :copy_db
 
-# set (:bundle_cmd) { "#{release_path}/bin/bundle" }
-# set :bundle_flags, "--deployment --quiet --binstubs"
+
+set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
+set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
+set :unicorn_start_cmd, "(cd #{deploy_to}/current; bundle exec unicorn -E production -Dc #{unicorn_conf})"
 
 # - for unicorn - #
 namespace :deploy do
