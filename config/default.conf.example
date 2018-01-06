@@ -1,6 +1,6 @@
 upstream app {
     # Path to Unicorn SOCK file, as defined previously
-    server unix:/home/root/nature-photocompetition/shared/unicorn.socket fail_timeout=0;
+    server unix:/home/deploy/nature-photocompetition/shared/unicorn.socket fail_timeout=0;
 }
 
 server {
@@ -10,7 +10,7 @@ server {
     server_name localhost;
 
     # Application root, as defined previously
-    root /home/root/nature-photocompetition/current/public;
+    root /home/deploy/nature-photocompetition/current/public;
 
     try_files $uri/index.html $uri @app;
 

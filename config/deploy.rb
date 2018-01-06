@@ -7,11 +7,11 @@ set :repository,  'https://github.com/infernalmaster/nature-photocompetition.git
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, '207.154.244.139'                          # Your HTTP server, Apache/etc
-role :app, '207.154.244.139'                          # This may be the same as your `Web` server
-role :db,  '207.154.244.139', primary: true # This is where Rails migrations will run
+role :web, '159.89.11.108'                          # Your HTTP server, Apache/etc
+role :app, '159.89.11.108'                          # This may be the same as your `Web` server
+role :db,  '159.89.11.108', primary: true # This is where Rails migrations will run
 
-set :user, 'root'
+set :user, 'deploy'
 set :use_sudo, false
 set :bundle_without, %i[development test]
 # set :bundle_dir,      File.join(fetch(:shared_path), 'gems')
