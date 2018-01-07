@@ -1,34 +1,33 @@
 body {
     position: relative;
-    font-family: 'Roboto',sans-serif;
-    font-weight: 300;
+    font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+    line-height: 1.5;
+    color: #4c4c4c;
+    color: rgba(0,0,0,.7);
+}
+
+p {
+  margin: 10px 0;
 }
 
 h1{
-	font-family: 'Roboto Slab',sans-serif;
 	font-size: 100px;
 	color: #ffffff;
 	text-shadow: 4px 4px 0 #000;
-
 }
 
 h2{
 	font-weight: 300;
 	font-size: 36px;
-	color: #ffffff;
 }
 h3{
-	font-family: 'Roboto Condensed', sans-serif;
-	font-weight: 700;
+	font-weight: 400;
 	font-size: 40px;
-	color: #ffffff;
 }
 
 h4{
 	font-weight: 400;
 	font-size: 30px;
-	color: #ffffff;
-
 }
 
 h1.photo_logo {
@@ -70,12 +69,11 @@ h1.photo_logo {
             }
 
         nav {
-            padding: 45px 200px 0 130px;
+            padding: 45px 130px 0 130px;
         }
             nav li {
                 display: inline;
-                font-family: 'Roboto Condensed', sans-serif;
-                font-weight: 700;
+                font-weight: 600;
                 font-size: 14px;
                 padding: 0 5px 12px 5px;
                 margin: 0 20px 0 20px;
@@ -87,15 +85,15 @@ h1.photo_logo {
             }
 
             nav li:hover a {
-                color: #8f7726;
+                color: #357edd;
                 cursor: pointer;
             }
 
             nav li.active {
-                border-bottom: 2px solid #8f7726;
+                border-bottom: 2px solid #357edd;
             }
             nav li.active a {
-                color: #8f7726;
+                color: #357edd;
             }
 
 .dropshadow {
@@ -155,7 +153,6 @@ h1.photo_logo {
     display: inline-block;
     width: 100%;
 
-    font-family: 'Roboto',sans-serif;
     font-weight: 300;
 
     border: none;
@@ -176,12 +173,12 @@ h1.photo_logo {
 
     outline-style: none;
 
-    background: #8f7726;
+    background: #0074D9;
     color: #ffffff;
 }
-    .btn:hover{  background: #776320;  }
-    .btn.active {  background: #5a4b18;  }
-    .btn:disabled { background: #c3c3c3; cursor: default; }
+    .btn:hover{  background: #357edd;  }
+    .btn.active {  background: #357edd;  }
+    .btn:disabled { opacity: 0.5; cursor: default; }
 
 
 
@@ -289,8 +286,8 @@ h1.photo_logo {
     }
 
     .steps__item.active {
-        color: #8f7726;
-        border-bottom: 2px solid #8f7726;
+        color: #357edd;
+        border-bottom: 2px solid #357edd;
     }
 
 
@@ -374,7 +371,6 @@ h1.photo_logo {
 	padding-top: 20px;
 }
 .inputfield label {
-	font-family: 'Roboto Condensed',sans-serif;
 	font-weight: 400;
 	font-size: 18px;
 	display: block;
@@ -386,11 +382,11 @@ input[type="text"], input[type="email"] {
 	width: 354px;
 	height: 40px;
 	font-size: 24px;
-	border: 3px solid #bdbdbd;
+	border: 1px solid rgba(0,0,0,.2);
 	padding-left: 10px;
 }
 input[type="text"]:focus, input[type="email"]:focus {
-	border: 3px solid #8f7726;
+	border: 1px solid rgba(0,0,0,.5);
 }
 
 
@@ -470,7 +466,6 @@ input[type="text"]:focus, input[type="email"]:focus {
 
     .done p {
         position: relative;
-        font-family: 'Roboto Slab',sans-serif;
         font-size: 60px;
         color: #237935;
         display: inline;
@@ -509,14 +504,8 @@ input[type="text"]:focus, input[type="email"]:focus {
 
 
 .calendar {
-	background: url(/images/pattern.png) repeat repeat;
+	background: #ffde37;
 }
-    .calendar img {
-        position: absolute;
-        width: 50%;
-        left:30%;
-        opacity: 0.6;
-    }
 
     .events {
         margin: 0 auto;
@@ -528,9 +517,7 @@ input[type="text"]:focus, input[type="email"]:focus {
             position: relative;
             font-weight: 300;
             font-size: 18px;
-            color: #ffffff;
             top: 1px;
-
         }
             .events h3 {
                 padding-top: 20px;
@@ -543,10 +530,8 @@ input[type="text"]:focus, input[type="email"]:focus {
 
 
 .awards h3,.sponsors h3,.partners h3, .medals h3 {
-	color: #5e5222;
-	position: relative;
-	/*margin: auto;*/
-	/*width: 200px;*/
+  position: relative;
+  font-weight: 400;
   text-align: center;
 	padding-top: 100px;
 	padding-bottom: 20px;
@@ -566,11 +551,7 @@ input[type="text"]:focus, input[type="email"]:focus {
 .partner p{
 	font-weight: 400;
 	font-size: 14px;
-	color: #464645;
-	text-transform: uppercase;
 	width: 220px;
-	padding-top: 30px;
-
 }
 
 .partner{
@@ -599,7 +580,7 @@ input[type="text"]:focus, input[type="email"]:focus {
 }
 .jury{
 	width: 100%;
-	background: #2d2a2f;
+	background: #cdecff;
   clear: both;
 }
 .jury h3{
@@ -618,19 +599,15 @@ input[type="text"]:focus, input[type="email"]:focus {
   margin-left: 52px;
   width: 440px;
 }
-.content p {
-  color: #fff;
-}
 .member{
   text-decoration: none;
   margin-right: auto;
 }
 .member img{
-	 -moz-border-radius: 200px;
-    -webkit-border-radius: 200px;
-    -o-border-radius: 200px;
-    border-radius: 200px;
-    border: 5px solid #403d42;
+	-moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  -o-border-radius: 200px;
+  border-radius: 200px;
 }
 .jury_wrap{
 	width: 690px;
@@ -683,16 +660,16 @@ input[type="text"]:focus, input[type="email"]:focus {
 footer{
 	font-weight: 300;
 	font-size: 18px;
-	color: #7f7f7f;
+  color: #7f7f7f;
+  padding: 30px 0;
 }
 
 .fb_logo {
 	float: left;
-    margin: 30px 30px 0 40px;
+    margin: 0 30px 0 40px;
     z-index: 1;
     position: relative;
 }
-
 
 .adress{
 	float: left;
@@ -700,14 +677,12 @@ footer{
 }
 footer p{
 	position: relative;
-top:30px;
-padding: 0 30px 20px 30px;
+
+  padding: 0 30px;
+  margin: 0;
 }
 .copyright{
-float: right;
-position: relative;
-top:-85px;
-padding-right: 20px;
+
 }
 
 
@@ -733,7 +708,7 @@ padding-right: 20px;
 .awards{
 	position: relative;
 	padding-bottom: 30px;
-	
+
 }
 
 .medal img {
