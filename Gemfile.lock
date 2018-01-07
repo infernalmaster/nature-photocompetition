@@ -20,12 +20,13 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
-    carrierwave (0.8.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-    carrierwave-datamapper (0.2.2)
-      carrierwave (~> 0.8.0)
-      dm-core (~> 1.1)
+    carrierwave (1.0.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
+    carrierwave-datamapper (0.1.1)
+      carrierwave
+      dm-core (~> 1.0)
     concurrent-ruby (1.0.5)
     data_mapper (1.2.0)
       dm-aggregates (~> 1.2.0)
@@ -88,8 +89,11 @@ GEM
     kgio (2.11.1)
     mail (2.7.0)
       mini_mime (>= 0.1.1)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
     mini_mime (1.0.0)
-    minitest (5.10.3)
+    minitest (5.11.1)
     multi_json (1.12.2)
     mustermann (1.0.1)
     net-scp (1.2.1)
@@ -113,7 +117,7 @@ GEM
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
       rspec-mocks (~> 3.7.0)
-    rspec-core (3.7.0)
+    rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -144,7 +148,7 @@ PLATFORMS
 DEPENDENCIES
   babosa
   capistrano (~> 2.15.5)
-  carrierwave
+  carrierwave (~> 1.0.0)
   carrierwave-datamapper
   data_mapper
   dm-aggregates
