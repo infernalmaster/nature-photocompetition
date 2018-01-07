@@ -37,6 +37,7 @@ post '/save_profile' do
     address: params[:address],
     phone: params[:phone],
     email: params[:email],
+    region: params[:region],
     site: params[:site],
     photo_alliance: params[:photo_alliance],
     position: params[:position],
