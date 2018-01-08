@@ -1,13 +1,16 @@
 SETTINGS = {
-  url_base: 'http://photoportrait.org.ua/',
+  url_base: 'http://biennalenature.org/',
+
+  smtp_server: 'smtp.gmail.com',
+  smtp_port: '587',
+  smtp_user_name: 'xxx',
+  smtp_password: 'xxx',
+  smtp_domain: 'localhost',
+  smtp_from: 'biennialnature@gmail.com',
+  smtp_to: 'biennialnature@gmail.com',
+
   pb_public_key: 'xxx',
   pb_private_key: 'xxx',
-  smtp_server: 'xxx',
-  smtp_port: 587,
-  smtp_user_name: 'xxx',
-  smtp_to: 'xxx',
-  smtp_password: 'xxx',
-  smtp_domain: 'xxx',
-  smtp_from: 'xxx',
+
   sandbox: 1
 }.freeze
