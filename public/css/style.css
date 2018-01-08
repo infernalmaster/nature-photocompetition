@@ -6,6 +6,10 @@ body {
     color: rgba(0,0,0,.7);
 }
 
+img {
+  max-width: 100%;
+}
+
 p {
   margin: 10px 0;
 }
@@ -38,7 +42,7 @@ h1.photo_logo {
 }
 .wrapper {
     position: relative;
-    width: 960px;
+    max-width: 960px;
     margin: 0 auto;
 }
 
@@ -55,7 +59,7 @@ h1.photo_logo {
 }
 
     .menu {
-        width: 960px;
+        max-width: 960px;
         margin: 0 auto;
     }
 
@@ -117,6 +121,10 @@ h1.photo_logo {
     transition: all 0.3s ease-in-out;
 }
 
+@media (max-width: 1000px) {
+
+}
+
 /* first slide with photo of Nazarenko*/
 .slide{
     padding-top: 120px;
@@ -165,6 +173,7 @@ h1.photo_logo {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    margin: 0;
 
     -webkit-transition:  0.3s ease-out 0.3s;
     -moz-transition: 0.3s ease-out 0.3s;
@@ -509,7 +518,7 @@ input[type="text"]:focus, input[type="email"]:focus {
 
     .events {
         margin: 0 auto;
-        width: 680px;
+        max-width: 680px;
         text-align: center;
         padding: 20% 0;
     }
@@ -557,21 +566,21 @@ input[type="text"]:focus, input[type="email"]:focus {
 .partner{
 	padding: 0 10px 80px;
 	text-align: center;
-	vertical-align: bottom;
+  vertical-align: bottom;
+  display: inline-block;
 }
 
 .partnerlist{
-	padding-top: 30px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.partnerlist .parterline {
+  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-}
-
-.partnerlist .parterline {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
 }
 
 .fix{
@@ -592,16 +601,20 @@ input[type="text"]:focus, input[type="email"]:focus {
 }
 .block {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   padding: 20px 0 40px;
 }
 .content {
-  margin-left: 52px;
-  width: 440px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 30px;
+  max-width: 460px;
 }
 .member{
   text-decoration: none;
-  margin-right: auto;
 }
 .member img{
 	-moz-border-radius: 200px;
@@ -610,7 +623,7 @@ input[type="text"]:focus, input[type="email"]:focus {
   border-radius: 200px;
 }
 .jury_wrap{
-	width: 690px;
+	max-width: 690px;
 	position: relative;
 	margin: auto;
 }
@@ -673,7 +686,8 @@ footer{
 
 .adress{
 	float: left;
-	width: 500px;
+  max-width: 500px;
+  margin: auto;
 }
 footer p{
 	position: relative;
@@ -681,13 +695,17 @@ footer p{
   padding: 0 30px;
   margin: 0;
 }
-.copyright{
 
+@media (max-width: 1000px) {
+  footer {
+    text-align: center;
+  }
+  .fb_logo, .adress {
+    float: none;
+  }
 }
 
-
 .award, .medal{
-
 	width: 265px;
 	padding: 30px 10px 20px 10px;
 	text-align: center;
