@@ -9,6 +9,10 @@ server {
     # Set the server name, similar to Apache's settings
     server_name localhost;
 
+    location ~* ^.+\.(rss|atom|jpg|jpeg|gif|png|ico|rtf|js|css)$ {
+      expires max;
+    }
+
     # Application root, as defined previously
     root /home/deploy/nature-photocompetition/current/public;
 
