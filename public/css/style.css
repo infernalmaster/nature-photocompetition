@@ -16,8 +16,8 @@ p {
 
 h1{
 	font-size: 100px;
-	color: #ffffff;
-	text-shadow: 4px 4px 0 #000;
+  color: #ffffff;
+  font-weight: 300;
 }
 
 h2{
@@ -34,19 +34,11 @@ h4{
 	font-size: 30px;
 }
 
-h1.photo_logo {
-  background: url('/images/logo-text.svg') no-repeat center right;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-}
 .wrapper {
     position: relative;
     max-width: 960px;
     margin: 0 auto;
 }
-
-
 
 
 .wrapper_menu {
@@ -127,25 +119,27 @@ h1.photo_logo {
 
 /* first slide with photo of Nazarenko*/
 .slide{
-    padding-top: 120px;
-	clear: both;
-	position: relative;
-	height: 76%;
-    min-height: 450px;
+  padding-top: 120px;
+  clear: both;
+  position: relative;
+  height: 100vh;
+  min-height: 450px;
+  box-sizing: border-box;
 }
     .slide__bg{
         width: 100%;
         height: 100%;
-        background: url('/images/slide_bg.jpg');
+        background: url('/images/mark-basarab-122141.jpg');
         background-size: cover;
+        background-position: center center;
     }
 
     .slide_text{
         position: relative;
         float: right;
-        width: 60%;
         margin-right: 10%;
         margin-top: 5%;
+        color: #fff;
     }
         .slide_text h1{
             font-size: 5em;
@@ -247,7 +241,11 @@ h1.photo_logo {
     }
     .btn--close:hover {  background: #2d2a2f; }
 
-
+.take-part {
+  margin-top: -101px;
+  z-index: 1;
+  position: relative;
+}
 .take-part-content {
     max-height: 0;
     overflow: hidden;
