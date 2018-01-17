@@ -7,7 +7,7 @@ server {
     listen 80;
 
     # Set the server name, similar to Apache's settings
-    server_name localhost;
+    server_name biennalenature.org www.biennalenature.org;
 
     location ~* ^.+\.(rss|atom|jpg|jpeg|gif|png|ico|rtf|js|css)$ {
       expires max;
