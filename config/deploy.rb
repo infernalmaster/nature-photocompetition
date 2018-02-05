@@ -32,7 +32,6 @@ task :copy_settings, roles: :app do
   run "cp #{app_db} #{release_path}/settings.rb"
 end
 task :bundle_install, roles: :app do
-  app_db = "#{shared_path}/settings.rb"
   run "cd #{release_path}; bundle install"
 end
 after 'deploy:update_code', :copy_settings, :copy_db, :bundle_install
