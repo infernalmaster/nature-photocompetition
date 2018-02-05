@@ -21,7 +21,7 @@ set :deploy_to, "/home/#{user}/#{application}"
 
 set :default_environment, 'PATH' => '$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH'
 
-set :shared_children, shared_children + ['public/uploads']
+set :shared_children, shared_children + ['public/uploads', 'public/catalogs']
 
 task :copy_db, roles: :app do
   app_db = "#{shared_path}/production.db"

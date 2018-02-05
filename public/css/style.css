@@ -998,3 +998,7 @@ body.rtl .formError .formErrorArrow {
 .center {
   text-align: center
 }
+
+.pdf {
+  padding: 0 10px;
+}
