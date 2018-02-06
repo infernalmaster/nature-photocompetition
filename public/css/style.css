@@ -604,10 +604,10 @@ input[type="text"]:focus, input[type="email"]:focus {
   max-width: 225px;
 }
 .member img{
-	/* -moz-border-radius: 200px;
-  -webkit-border-radius: 200px;
-  -o-border-radius: 200px;
-  border-radius: 200px; */
+	-moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
 }
 .jury_wrap{
 	max-width: 690px;
