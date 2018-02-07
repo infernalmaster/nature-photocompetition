@@ -563,6 +563,10 @@ input[type="text"]:focus, input[type="email"]:focus {
 	text-align: center;
   vertical-align: bottom;
   display: inline-block;
+
+  color: #4c4c4c;
+  color: rgba(0,0,0,.7);
+  text-decoration: none;
 }
 
 .partnerlist{
