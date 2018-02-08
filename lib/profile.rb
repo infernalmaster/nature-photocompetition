@@ -32,7 +32,7 @@ class Profile
   def payment_url
     base = request_params
 
-    "https://www.liqpay.com/api/checkout" +
+    "https://www.liqpay.ua/api/3/checkout" +
       "?data=#{ URI::encode( base ) }" +
       "&signature=#{ URI::encode( signature( base ) ) }"
   end
@@ -54,9 +54,9 @@ class Profile
         amount: rate,
         currency: 'UAH',
         description: "#{self.name.to_slug.normalize(transliterations: [:ukrainian, :russian]).to_s} #{self.surname.to_slug.normalize(transliterations: [:ukrainian, :russian]).to_s}",
-        language: 'ru',
+        language: 'uk',
         order_id: order_id,
-        server_url: "#{SiteConfig.url_base}/payment/#{self.id}",
+        server_url: "#{SiteConfig.url_base}payment/#{self.id}",
         result_url: SiteConfig.url_base,
         sandbox: SiteConfig.sandbox
       }
