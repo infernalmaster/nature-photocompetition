@@ -64,7 +64,7 @@ class Profile
         sandbox: SiteConfig.sandbox
       }
       json = JSON.generate(params)
-      Base64.encode64(json).gsub("\n",'')
+      Base64.strict_encode64(json)
     end
 
     def order_id
@@ -74,6 +74,6 @@ class Profile
     def signature(data)
       key = SiteConfig.pb_private_key + data + SiteConfig.pb_private_key
       key = Digest::SHA1.digest(key)
-      Base64.encode64(key).gsub("\n",'')
+      Base64.strict_encode64(key)
     end
 end
