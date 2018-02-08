@@ -1,0 +1,4 @@
+%form{"accept-charset": "utf-8", action: "https://www.liqpay.ua/api/3/checkout", method: "POST"}
+  %input{name: "data", type: "hidden", value: @payment_form_params[:data]}
+  %input{name: "signature", type: "hidden", value: @payment_form_params[:signature]}
+  %input{src: "//static.liqpay.ua/buttons/p1ru.radius.png", type: "image"}

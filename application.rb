@@ -77,7 +77,10 @@ post '/upload' do
 
   if profile.save(:with_photos)
     session.delete(:user_id)
-    profile.payment_url
+
+    @payment_form_params = profile.payment_form_params
+
+    haml :liqpay_form
   else
     status 406
     er_message = profile.errors.values.join(', ')

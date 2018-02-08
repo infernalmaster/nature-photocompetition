@@ -29,12 +29,13 @@ class Profile
   validates_presence_of :name, :surname, :region, :zip_code,
                         :city, :address, :phone, :email
 
-  def payment_url
+  def payment_form_params
     base = request_params
 
-    "https://www.liqpay.ua/api/3/checkout" +
-      "?data=#{ URI::encode( base ) }" +
-      "&signature=#{ URI::encode( signature( base ) ) }"
+    {
+      data: URI::encode(base),
+      signature: URI::encode(signature(base))
+    }
   end
 
   def signature_valid?(recieved_signature, recieved_data)
