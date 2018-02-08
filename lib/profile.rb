@@ -52,11 +52,13 @@ class Profile
       params = {
         version: 3,
         public_key: SiteConfig.pb_public_key,
+        # private_key: SiteConfig.pb_private_key,
+        action: 'pay',
         amount: rate,
         currency: 'UAH',
         description: "#{self.name.to_slug.normalize(transliterations: [:ukrainian, :russian]).to_s} #{self.surname.to_slug.normalize(transliterations: [:ukrainian, :russian]).to_s}",
-        language: 'uk',
         order_id: order_id,
+        language: 'uk',
         server_url: "#{SiteConfig.url_base}payment/#{self.id}",
         result_url: SiteConfig.url_base,
         sandbox: SiteConfig.sandbox
