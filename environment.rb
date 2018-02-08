@@ -13,6 +13,7 @@ require 'carrierwave/datamapper'
 require 'json'
 require 'babosa'
 require 'pony'
+require 'liqpay'
 
 require 'sinatra' unless defined?(Sinatra)
 
@@ -30,4 +31,9 @@ configure do
   DataMapper.finalize #check models
   #DataMapper.auto_migrate! # drop and recreate all db tables
   #DataMapper.auto_upgrade!  # just add new columns and tables
+
+  ::Liqpay.configure do |config|
+    config.public_key = SiteConfig.pb_public_key
+    config.private_key = SiteConfig.pb_private_key
+  end
 end

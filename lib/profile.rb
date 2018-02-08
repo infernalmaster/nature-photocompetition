@@ -29,30 +29,23 @@ class Profile
   validates_presence_of :name, :surname, :region, :zip_code,
                         :city, :address, :phone, :email
 
-  def payment_form_params
-    base = request_params
-
-    {
-      data: URI::encode(base),
-      signature: URI::encode(signature(base))
-    }
+  def payment_form
+    Liqpay.new.cnb_form(request_params)
   end
 
   def signature_valid?(recieved_signature, recieved_data)
-    signature(recieved_data) == recieved_signature
+    Liqpay.new.match?(recieved_data, recieved_signature)
   end
 
   protected
 
     def rate
-      if self.photo_alliance then 100 else 150 end
+      self.photo_alliance ? 100 : 150
     end
 
     def request_params
-      params = {
+      {
         version: 3,
-        public_key: SiteConfig.pb_public_key,
-        # private_key: SiteConfig.pb_private_key,
         action: 'pay',
         amount: rate,
         currency: 'UAH',
@@ -63,17 +56,9 @@ class Profile
         result_url: SiteConfig.url_base,
         sandbox: SiteConfig.sandbox
       }
-      json = JSON.generate(params)
-      Base64.strict_encode64(json)
     end
 
     def order_id
       Time.now.to_s.parameterize + self.id.to_s
-    end
-
-    def signature(data)
-      key = SiteConfig.pb_private_key + data + SiteConfig.pb_private_key
-      key = Digest::SHA1.digest(key)
-      Base64.strict_encode64(key)
     end
 end

@@ -16,6 +16,7 @@ gem 'haml'
 gem 'pony'
 gem 'rake'
 gem 'sinatra', '>= 1.0'
+gem 'liqpay', github: 'liqpay/sdk-ruby'
 
 group :production do
   gem 'unicorn'

@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/liqpay/sdk-ruby.git
+  revision: a7a990f1410bdfc281fcfc66828555b4bc1e6260
+  specs:
+    liqpay (0.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -159,6 +165,7 @@ DEPENDENCIES
   dm-timestamps
   dm-validations
   haml
+  liqpay!
   pony
   rack-test
   rake
