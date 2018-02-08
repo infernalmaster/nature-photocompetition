@@ -186,7 +186,9 @@ function initTakePart () {
         contentType: false
       }).then(
         function (response) {
-          document.location.href = response
+          var $form = $(response)
+          $('body').append($form)
+          $form.submit()
         },
         function (xhr) {
           $photosFormBtn.prop('disabled', false)
