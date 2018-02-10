@@ -18,9 +18,10 @@
 
 .slide#start
   .slide__bg
-    %h2 5 червня &mdash; Всесвітній день охорони навколишнього середовища.
-    %h1.photo_logo ХІІ Національна Бієнале ПРИРОДА 2018
-    %h2 Природа &mdash; національний фотоконкурс, що  досліджує взаємини людини і довкілля, конфлікту цивілізації та природи, урбаністичного середовища, екзотичних крайобразів, флори і фауни.
+    %h2.bg-text 5 червня &mdash; Всесвітній день охорони навколишнього середовища.
+    %br
+    %h1.photo_logo.bg-text ХІІ Національна Бієнале ПРИРОДА 2018
+  .p-copy © Євген Ком
 
 -#      take part
 = haml :_take_part
@@ -58,29 +59,28 @@
     .parterline
       %a.partner{href: "http://www.if.gov.ua"}
         %img{alt: "Управління культури, національностей та релігій Івано-Франківської облдержадміністрації", src: "/images/Iv-Fr-Oblast-web.png"}
-        %p Управління культури, національностей та релігій Івано-Франківської облдержадміністрації
+        %p.double-cont
+          %span.half> Управління культури, національностей та релігій Івано-Франківської облдержадміністрації
+          %span.half> Управління екології та природних ресурсів Івано-Франківської облдержадміністрації
       %a.partner{href: "http://www.mvk.if.ua"}
         %img{alt: "Виконавчий комітет Івано-Франківської міської ради", src: "/images/Ivano-Frankivsk-mvk-web.png"}
         %p Виконавчий комітет <br> Івано-Франківської <br> міської ради
       %a.partner{href: "http://kultura-tsm.at.ua"}
         %img{alt: "Відділ культури Тисменицької райдержадміністрації", src: "/images/Tysmenycya-web.png"}
         %p Відділ культури Тисменицької райдержадміністрації
-    .parterline
+    .parterline.fe
       %a.partner{href: "http://www.photospilka.com"}
         %img{alt: "Івано-Франківська обласна організація НСФХУ", src: "/images/natsionalna-spilka-fotokhudozhnykiv-ukrainy-web.png"}
         %p Івано-Франківська обласна організація НСФХУ
+      %a.partner{href: "http://www.ifkm.if.ua/"}
+        %img{alt: "Івано-Франківський краєзнавчий музей", src: "/images/ratusza.jpg"}
+        %p Івано-Франківський краєзнавчий музей
       %a.partner{href: "http://photocolumb.at.ua"}
         %img{alt: "фотоклуб «Колумб»", src: "/images/fotoklub-kolumb-web.png"}
         %p Народний фотоклуб «Колумб», Тисмениця
-      .parterline
-        %a.partner{href: "http://www.if.gov.ua/"}
-          %p.black Управління екології та природних ресурсів Івано-Франківської облдержадміністрації
-        %a.partner{href: "http://www.ifkm.if.ua/"}
-          %img{alt: "Івано-Франківський краєзнавчий музей", src: "/images/ratusza.jpg"}
-          %p Івано-Франківський краєзнавчий музей
-        %a.partner{href: "http://www.rsf.rzeszow.pl/"}
-          %img{alt: "Rzeszowskie Stowarzyszenie Fotograficzne", src: "/images/RSF.jpg"}
-          %p Rzeszowskie Stowarzyszenie Fotograficzne
+      %a.partner{href: "http://www.rsf.rzeszow.pl/"}
+        %img{alt: "Rzeszowskie Stowarzyszenie Fotograficzne", src: "/images/RSF+.jpg"}
+        %p Rzeszowskie Stowarzyszenie Fotograficzne
 
   %h3 Патронат
 .partners.wrapper
@@ -94,7 +94,7 @@
       .partnerlogo
         %a{href: "http://www.image-sans-frontiere.com/"}
           %img{alt: "LABEL ISF 126/2015", src: "/images/image-sans-frontiere-web.png"}
-        %p LABEL ISF 030/2018
+        %p LABEL ISF 0??/2018
 -#        awards
 .medals.wrapper#awards
   %h3 Нагороди
@@ -120,8 +120,9 @@
 
 .awards.wrapper
   %h3 Призи
-  .awards_container
-    %p в процесі комплектації
+  %p.center Цінні призи від партнерів: фотоаксесуари, подарункові сертифікати, спеціальні призи.
+  %p.center В процесі комплектації
+  -# .awards_container
   -#   .award
   -#     %a{href: "http://www.prophoto.ua/products/tripod/41/144/"}
   -#       %img{alt: "Slik Pro 340 DX Leg", src: "/images/award_Slik-Pro-340-DX-Leg.jpg"}/
@@ -189,8 +190,8 @@
     %img{alt: "ПРОФОТО", title: "ПРОФОТО", src: "/images/prophoto-web.png"}
   -# %a{href: "#"}
   -#   %img{alt: "PHOTEX", title: "PHOTEX", src: "/images/PHOTEX-web.png"}
-  %a{href: "http://www.cyfrovychok.ua/"}
-    %img{alt: "Цифровичок", title: "Цифровичок", src: "/images/Tsyfrovychok-web.png"}
+  -# %a{href: "http://www.cyfrovychok.ua/"}
+  -#   %img{alt: "Цифровичок", title: "Цифровичок", src: "/images/Tsyfrovychok-web.png"}
   -# %a{href: "http://manfrotto.com.ua/"}
   -#   %img{alt: "Manfrotto", title: "Manfrotto", src: "/images/manfrotto-web.png"}
   %a{href: "http://halytska.if.ua/"}
@@ -205,16 +206,16 @@
   -#   %img{alt: "Прометей фото студія", title: "Прометей фото студія", src: "/images/prometey-web.jpg"}
   %a{href: "http://carpatiia.ua/"}
     %img{alt: "Карпатія", title: "Карпатія", src: "/images/karpatiia-web.png"}
-  -# %a{href: "http://sako.com.ua/"}
-  -#   %img{alt: "Сако", title: "Сако", src: "/images/Sako-web.png"}
+  %a{href: "http://sako.com.ua/"}
+    %img{alt: "Сако", title: "Сако", src: "/images/Sako-web.png"}
   -# %a{href: "http://vk.com/expresia"}
   -#   %img{alt: "Фотосалон «Експресія»", title: "Фотосалон «Експресія»", src: "/images/fotosalon-ekspresiia-web.png"}
-  -# %a{href: "http://franko.if.ua/"}
-  -#   %img{alt: "Ресторан «Франко»", title: "Ресторан «Франко»", src: "/images/fran-ko-web.png"}
+  %a{href: "http://franko.if.ua/"}
+    %img{alt: "Ресторан «Франко»", title: "Ресторан «Франко»", src: "/images/fran-ko-web.png"}
   %a{href: "https://www.facebook.com/csmstanislaw"}
     %img{alt: "Центр Сучасного Мистецтва", title: "Центр Сучасного Мистецтва", src: "/images/tsentr-suchasnoho-mystetstva-web.png"}
-  -# %a{href: "http://mvolosovska.com.ua/"}
-  -#   %img{alt: "Дизайн-студія Марії Волосовської", title: "Дизайн-студія Марії Волосовської", src: "/images/Dyzain-studiia-Marii-Volosovskoi-web.png"}
+  %a{href: "http://mvolosovska.com.ua/"}
+    %img{alt: "Дизайн-студія Марії Волосовської", title: "Дизайн-студія Марії Волосовської", src: "/images/Dyzain-studiia-Marii-Volosovskoi-web.png"}
   %a{href: "#"}
     %img{alt: "Станіславська випічка", title: "Станіславська випічка", src: "/images/stanislavska-vypichka-web.png"}
   -# %a{href: "http://warm.if.ua/"}
@@ -223,6 +224,10 @@
     %img{alt: "N+K Architectvra", title: "N+K Architectvra", src: "/images/nplusk-web.png"}
   -# %a{href: "https://www.facebook.com/fabrykakavyif/"}
   -#   %img{alt: "Фабрика кави", title: "Фабрика кави", src: "/images/fabryka-kavy-web.png"}
+  %a{href: "https://day.kyiv.ua/"}
+    %img{alt: "День", title: "День", src: "/images/Den-web.png"}
+  %a{href: "http://www.1043.com.ua/"}
+    %img{alt: "Західний полюс", title: "Західний полюс", src: "/images/Zakhidnyi-polius-web.png"}
 
 
 .partners.wrapper
@@ -296,18 +301,18 @@
       .partnerlogo
         %a{href: "http://www.prostir.ua/"}
           %img{alt: "Громадський простір", title: "Громадський простір", src: "/images/Hromadskyi-prostir-web.png"}
-    .partner
-      .partnerlogo
-        %a{href: "https://day.kyiv.ua/"}
-          %img{alt: "День", title: "День", src: "/images/Den-web.png"}
+    -# .partner
+    -#   .partnerlogo
+    -#     %a{href: "https://day.kyiv.ua/"}
+    -#       %img{alt: "День", title: "День", src: "/images/Den-web.png"}
     .partner
       .partnerlogo
         %a{href: "http://kuryer-if.info/"}
           %img{alt: "Західний кур’єр", title: "Західний кур’єр", src: "/images/Zakhidnyi-kurier-web.png"}
-    .partner
-      .partnerlogo
-        %a{href: "http://www.1043.com.ua/"}
-          %img{alt: "Західний полюс", title: "Західний полюс", src: "/images/Zakhidnyi-polius-web.png"}
+    -# .partner
+    -#   .partnerlogo
+    -#     %a{href: "http://www.1043.com.ua/"}
+    -#       %img{alt: "Західний полюс", title: "Західний полюс", src: "/images/Zakhidnyi-polius-web.png"}
     .partner
       .partnerlogo
         %a{href: "https://www.youtube.com/channel/UChwxMaGGTl9rY-vnepp80ZA"}

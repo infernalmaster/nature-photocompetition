@@ -132,7 +132,7 @@ h4{
         max-width: 800px;
       }
       h2{
-        padding-top: 20px;
+        margin-top: 20px;
         font-weight: 300;
         font-size: 30px;
       }
@@ -182,8 +182,9 @@ h4{
 
 
 .btn--take-apart {
-    font-size: 36px;
-    padding: 29px;
+  font-size: 26px;
+  padding: 15px;
+  width: auto;
 }
     .btn--take-apart:before{
         content: "";
@@ -192,8 +193,6 @@ h4{
         width: 26px;
         height: 17px;
         padding-right: 14px;
-        padding-bottom: 3px;
-
     }
 
 
@@ -238,7 +237,7 @@ h4{
     .btn--close:hover {  background: #2d2a2f; }
 
 .take-part {
-  margin-top: -101px;
+  margin-top: -60px;
   z-index: 1;
   position: relative;
 }
@@ -515,7 +514,7 @@ input[type="text"]:focus, input[type="email"]:focus {
         margin: 0 auto;
         max-width: 680px;
         text-align: center;
-        padding: 20% 0;
+        padding: 50px 0;
     }
         .events span {
             position: relative;
@@ -551,6 +550,9 @@ input[type="text"]:focus, input[type="email"]:focus {
     text-decoration: none;
 }
 
+.fe .partner {
+  align-self: flex-end;
+}
 
 .partner p{
 	font-weight: 400;
@@ -579,7 +581,7 @@ input[type="text"]:focus, input[type="email"]:focus {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .fix{
@@ -1008,4 +1010,41 @@ body.rtl .formError .formErrorArrow {
 
 .pdf {
   padding: 0 10px;
+}
+
+.partner .double-cont {
+  width: 350px;
+}
+.half {
+  width: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  hyphens: auto;
+  vertical-align: top;
+}
+.half:first-child {
+  padding-right: 10px;
+}
+
+@media (max-width: 500px) {
+  .partner .double-cont {
+    width: 220px;
+  }
+}
+
+.sponsors {
+  overflow: hidden;
+}
+
+.bg-text {
+  display: inline;
+  background: #1b160fb0;
+  box-shadow: 10px 0 0 #1b160fb0, -10px 0 0 #1b160fb0;
+}
+.p-copy {
+  position: absolute;
+  right: -36px;
+  bottom: 50px;
+  color: white;
+  transform: rotate(270deg);
 }
