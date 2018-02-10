@@ -70,15 +70,15 @@ h4{
             }
 
             nav li:hover a {
-                color: #357edd;
+                color: #C12327;
                 cursor: pointer;
             }
 
             nav li.active {
-                border-bottom: 2px solid #357edd;
+                border-bottom: 2px solid #C12327;
             }
             nav li.active a {
-                color: #357edd;
+                color: #C12327;
             }
 
 .dropshadow {
@@ -122,27 +122,47 @@ h4{
         background: url('/images/window.jpg');
         background-size: cover;
         background-position: center center;
-        padding: 80px 50px;
+        padding: 100px 0 0 150px ;
         color: white;
     }
 
       h1{
         font-size: 70px;
         font-weight: 300;
-        max-width: 800px;
+        /* max-width: 800px; */
+        color: #C12327;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .white {
+        color: white
+      }
+      .btitle {
+        font-size: 120px;
       }
       h2{
         margin-top: 20px;
         font-weight: 300;
         font-size: 30px;
+
+        color: #C12327;
+        text-transform: uppercase;
+        font-weight: 600;
       }
 
       @media (max-width: 1000px) {
         h1{
           font-size: 30px;
         }
+        .btitle {
+          font-size: 40px;
+        }
         h2{
           font-size: 17px;
+        }
+
+        .slide__bg {
+          padding: 180px 50px;
         }
       }
 
@@ -165,18 +185,18 @@ h4{
     user-select: none;
     margin: 0;
 
-    -webkit-transition:  0.3s ease-out 0.3s;
-    -moz-transition: 0.3s ease-out 0.3s;
-    -o-transition:  0.3s ease-out 0.3s;
-    transition:  0.3s ease-out 0.3s;
+    -webkit-transition:  0.3s ease-out;
+    -moz-transition: 0.3s ease-out;
+    -o-transition:  0.3s ease-out;
+    transition:  0.3s ease-out;
 
     outline-style: none;
 
-    background: #0074D9;
+    background: #C12327;
     color: #ffffff;
 }
-    .btn:hover{  background: #357edd;  }
-    .btn.active {  background: #357edd;  }
+    .btn:hover{  opacity: 0.9;  }
+    .btn.active {  background: #C12327;  }
     .btn:disabled { opacity: 0.5; cursor: default; }
 
 
@@ -185,6 +205,9 @@ h4{
   font-size: 26px;
   padding: 15px;
   width: auto;
+
+  background: #1b160fb0;
+  border-top: 2px solid #C12327;
 }
     .btn--take-apart:before{
         content: "";
@@ -237,7 +260,7 @@ h4{
     .btn--close:hover {  background: #2d2a2f; }
 
 .take-part {
-  margin-top: -60px;
+  margin-top: -62px;
   z-index: 1;
   position: relative;
 }
@@ -288,8 +311,8 @@ h4{
     }
 
     .steps__item.active {
-        color: #357edd;
-        border-bottom: 2px solid #357edd;
+        color: #C12327;
+        border-bottom: 2px solid #C12327;
     }
 
 
@@ -1036,11 +1059,11 @@ body.rtl .formError .formErrorArrow {
   overflow: hidden;
 }
 
-.bg-text {
+/* .bg-text {
   display: inline;
   background: #1b160fb0;
   box-shadow: 10px 0 0 #1b160fb0, -10px 0 0 #1b160fb0;
-}
+} */
 .p-copy {
   position: absolute;
   right: -36px;
