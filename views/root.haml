@@ -14,7 +14,8 @@
           %a(href='#partners') Партнери
         %li<
           %a(href='#jury') Журі
-
+        %li<
+          %a(href='#catalogs') Каталоги
 
 .slide#start
   .slide__bg
@@ -224,6 +225,8 @@
     %img{alt: "Дизайн-студія Марії Волосовської", title: "Дизайн-студія Марії Волосовської", src: "/images/Dyzain-studiia-Marii-Volosovskoi-web.png"}
   %a{href: "#"}
     %img{alt: "Станіславська випічка", title: "Станіславська випічка", src: "/images/stanislavska-vypichka-web.png"}
+  %a{href: "#"}
+    %img{alt: "Kaffee Kultur", title: "Kaffee Kultur", src: "/images/kk.jpg"}
   -# %a{href: "http://warm.if.ua/"}
   -#   %img{alt: "Платформа «Тепле Місто»", title: "Платформа «Тепле Місто»", src: "/images/teple-misto-web.png"}
   %a{href: "http://nplusk.com"}
@@ -399,13 +402,23 @@
       .partnerlogo
         %a{href: "https://www.facebook.com/1573234386285085/"}
           %img{alt: "Яремчанський вісник", title: "Яремчанський вісник", src: "/images/yaremchanskyi-visnyk-web.png"}
-.medals.wrapper
+.medals.wrapper#catalogs
   %h3 Результати попередніх конкурсів
   .medals_container
-    %a.pdf{href: "/catalogs/Nature2006.pdf"} 2006
-    %a.pdf{href: "/catalogs/Nature2010.pdf"} 2010
-    %a.pdf{href: "/catalogs/Nature2012.pdf"} 2012
-    %a.pdf{href: "/catalogs/Nature2016.pdf"} 2016
+
+    %a.pdf{href: "/catalogs/Nature2006.pdf"}
+      2006
+      %img{src: '/images/cat/2006.jpg'}
+    %a.pdf{href: "/catalogs/Nature2010.pdf"}
+      2010
+      %img{src: '/images/cat/2010.jpg'}
+    %a.pdf{href: "/catalogs/Nature2012.pdf"}
+      2012
+      %img{src: '/images/cat/2012.jpg'}
+    %a.pdf{href: "/catalogs/Nature2016.pdf"}
+      2016
+      %img{src: '/images/cat/2016.jpg'}
+
 
 -#        jury
 .jury#jury

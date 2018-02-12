@@ -54,7 +54,7 @@ h4{
             }
 
         nav {
-            padding: 45px 130px 0 130px;
+            padding: 45px 0 0 130px;
         }
             nav li {
                 display: inline;
@@ -1076,4 +1076,9 @@ body.rtl .formError .formErrorArrow {
   bottom: 50px;
   color: white;
   transform: rotate(270deg);
+}
+.pdf {
+  width: 200px;
+  text-align: center;
+  color: #C12327;
 }

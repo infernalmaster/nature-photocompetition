@@ -45,7 +45,7 @@
 
     %p
       Дата народження:
-      = @profile.birthday
+      = @profile.birthday ? @profile.birthday.strftime('%d.%m.%Y') : '-'
     %p
       Статус оплати:
       = @status
