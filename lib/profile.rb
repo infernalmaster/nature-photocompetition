@@ -40,7 +40,7 @@ class Profile
   end
 
   def free?
-    birthday >= DateTime.new(1997, 4, 27)
+    birthday && (birthday >= DateTime.new(1997, 4, 27))
   end
 
   protected
