@@ -102,9 +102,7 @@ h4{
     transition: all 0.3s ease-in-out;
 }
 
-@media (max-width: 1000px) {
 
-}
 
 /* first slide with photo of Nazarenko*/
 .slide{
@@ -114,6 +112,14 @@ h4{
   height: 100vh;
   min-height: 450px;
   box-sizing: border-box;
+}
+@media (max-width: 1000px) {
+  .wrapper_menu {
+    display: none;
+  }
+  .slide{
+    padding-top: 0;
+  }
 }
     .slide__bg {
         box-sizing: border-box;
@@ -132,7 +138,7 @@ h4{
         /* max-width: 800px; */
         color: #C12327;
         text-transform: uppercase;
-        font-weight: 600;
+        font-weight: 700;
       }
       .white {
         color: white

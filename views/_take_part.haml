@@ -134,16 +134,8 @@
               %input{type: "checkbox", name: "photo_alliance", value: '1'}
               Член НСФХУ
           .inputfield
-            %label Вікова категорія
-            %label.with-pointer
-              %input{type: "radio", name: "category", value: '0', class: "validate[required]"}
-              дорослі (народилися до 25 квітня 1997р включно)
-            %label.with-pointer
-              %input{type: "radio", name: "category", value: '1', class: "validate[required]"}
-              16-20р (народилися з 26 квітня 1997р до 25 квітня 2002р включно)
-            %label.with-pointer
-              %input{type: "radio", name: "category", value: '2', class: "validate[required]"}
-              15р і менше (народилися 24 квітня 2002р або пізніше)
+            %label Дата народження
+            %input{type: "text", name: "birthday", class: "validate[custom[date]]"}
 
       %button.btn.btn--back.js-back-from-profile Назад
       %button.btn.btn--forward.btn--forward-short.js-send-profile Продовжити

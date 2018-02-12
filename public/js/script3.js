@@ -186,9 +186,13 @@ function initTakePart () {
         contentType: false
       }).then(
         function (response) {
-          var $form = $(response)
-          $('body').append($form)
-          $form.submit()
+          if (response === 'success') {
+            document.location.href = '/success'
+          } else {
+            var $form = $(response)
+            $('body').append($form)
+            $form.submit()
+          }
         },
         function (xhr) {
           $photosFormBtn.prop('disabled', false)

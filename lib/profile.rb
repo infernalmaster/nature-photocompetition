@@ -23,6 +23,8 @@ class Profile
   property :created_at,     DateTime
   property :updated_at,     DateTime
 
+  property :birthday,       DateTime
+
   has n, :photos
   validates_presence_of :photos, when: [:with_photos]
 
@@ -35,6 +37,10 @@ class Profile
 
   def signature_valid?(recieved_signature, recieved_data)
     Liqpay.new.match?(recieved_data, recieved_signature)
+  end
+
+  def free?
+    birthday >= DateTime.new(1997, 4, 27)
   end
 
   protected
@@ -53,7 +59,7 @@ class Profile
         order_id: order_id,
         language: 'uk',
         server_url: "#{SiteConfig.url_base}payment/#{self.id}",
-        result_url: SiteConfig.url_base,
+        result_url: "#{SiteConfig.url_base}success",
         sandbox: SiteConfig.sandbox
       }
     end
