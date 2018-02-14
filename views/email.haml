@@ -46,6 +46,11 @@
     %p
       Дата народження:
       = @profile.birthday ? @profile.birthday.strftime('%d.%m.%Y') : '-'
+
+    %p
+      Вікова категорія:
+      = @profile.age_category
+
     %p
       Статус оплати:
       = @status

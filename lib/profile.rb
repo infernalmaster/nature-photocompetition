@@ -40,7 +40,13 @@ class Profile
   end
 
   def free?
-    birthday && (birthday >= DateTime.new(1997, 4, 27))
+    birthday && (birthday >= DateTime.new(1997, 4, 25))
+  end
+
+  def age_category
+    return 'дорослі' if !birthday || (birthday <= DateTime.new(1997, 4, 24))
+
+    birthday <= DateTime.new(2002, 4, 24) ? '16 до 20р' : '15р і менше'
   end
 
   protected
