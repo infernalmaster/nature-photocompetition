@@ -168,7 +168,7 @@ h4{
         }
 
         .slide__bg {
-          padding: 180px 50px;
+          padding: 50px 20px 50px 50px;
         }
       }
 
@@ -543,7 +543,7 @@ input[type="text"]:focus, input[type="email"]:focus {
         margin: 0 auto;
         max-width: 680px;
         text-align: center;
-        padding: 50px 0;
+        padding: 50px 10px;
     }
         .events span {
             position: relative;
@@ -569,9 +569,7 @@ input[type="text"]:focus, input[type="email"]:focus {
 	padding-bottom: 20px;
 	text-transform: uppercase;
 }
-.awards{
 
-}
 .sponsors img{
     margin: 20px 30px 10px 29px;
 }
@@ -1042,22 +1040,26 @@ body.rtl .formError .formErrorArrow {
 }
 
 .partner .double-cont {
-  width: 350px;
+  width: 750px;
 }
-.half {
-  width: 50%;
+.third {
+  width: 33%;
   display: inline-block;
   box-sizing: border-box;
-  hyphens: auto;
   vertical-align: top;
+  padding: 0 2px;
 }
-.half:first-child {
-  padding-right: 10px;
+
+@media (max-width: 900px) {
+  .partner .double-cont {
+    width: auto;
+  }
 }
 
 @media (max-width: 500px) {
-  .partner .double-cont {
-    width: 220px;
+  .third {
+    width: 100%;
+    padding-bottom: 10px;
   }
 }
 
@@ -1065,11 +1067,6 @@ body.rtl .formError .formErrorArrow {
   overflow: hidden;
 }
 
-/* .bg-text {
-  display: inline;
-  background: #1b160fb0;
-  box-shadow: 10px 0 0 #1b160fb0, -10px 0 0 #1b160fb0;
-} */
 .p-copy {
   position: absolute;
   right: -36px;
