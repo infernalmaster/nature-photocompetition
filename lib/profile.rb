@@ -29,7 +29,7 @@ class Profile
   validates_presence_of :photos, when: [:with_photos]
 
   validates_presence_of :name, :surname, :region, :zip_code,
-                        :city, :address, :phone, :email
+                        :city, :address, :phone, :email, :birthday
 
   def payment_form
     Liqpay.new.cnb_form(request_params)
