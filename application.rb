@@ -92,7 +92,7 @@ post '/upload' do
         from: SiteConfig.smtp_from,
         to: SiteConfig.smtp_to,
         subject: "Реєстрація #{@profile.name} #{@profile.surname}",
-        html_body: (haml :email),
+        html_body: haml(:email, layout: false),
         via: :smtp,
         via_options: {
           address:               SiteConfig.smtp_server,
@@ -126,7 +126,7 @@ post '/payment/:id' do
       from: SiteConfig.smtp_from,
       to: SiteConfig.smtp_to,
       subject: "Реєстрація #{@profile.name} #{@profile.surname}",
-      html_body: (haml :email),
+      html_body: haml(:email, layout: false),
       via: :smtp,
       via_options: {
         address:               SiteConfig.smtp_server,
