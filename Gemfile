@@ -3,7 +3,12 @@
 source 'https://rubygems.org'
 gem 'babosa'
 gem 'carrierwave'
+
+# older version doesn't create db table to store file path
+# but this is good
 gem 'carrierwave-datamapper','~> 0.2.0'
+
+
 gem 'data_mapper'
 gem 'dm-aggregates'
 gem 'dm-constraints'
