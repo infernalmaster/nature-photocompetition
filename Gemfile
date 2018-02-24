@@ -2,8 +2,8 @@
 
 source 'https://rubygems.org'
 gem 'babosa'
-gem 'carrierwave', '0.11.2'
-gem 'carrierwave-datamapper'
+gem 'carrierwave'
+gem 'carrierwave-datamapper','~> 0.2.0'
 gem 'data_mapper'
 gem 'dm-aggregates'
 gem 'dm-constraints'
