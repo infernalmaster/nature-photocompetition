@@ -76,6 +76,7 @@ post '/upload' do
   5.times do |i|
     next unless params["image#{i}"]
     @profile.photos << Photo.new(
+      profile: @profile,
       file:  params["image#{i}"],
       title: params["title#{i}"] || "фото #{i}",
       position: position
