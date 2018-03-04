@@ -17,7 +17,7 @@ class Profile
   property :photo_alliance, Boolean, default: false
   property :position,       String
   property :skype,          String
-  property :facebook,       String
+  property :facebook,       String, length: 100
   property :paid,           Boolean, default: false
 
   property :created_at,     DateTime
