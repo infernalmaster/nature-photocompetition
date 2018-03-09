@@ -6,6 +6,8 @@
       %ul.nav
         %li.active<
           %a(href='#start') Старт
+        %li.active<
+          %a.js-show-take-part-content(href='#conditions') Умови конкурсу
         %li<
           %a(href='#calendar') Календар виставки
         %li<
@@ -13,9 +15,9 @@
         %li<
           %a(href='#partners') Партнери
         %li<
-          %a(href='#jury') Журі
-        %li<
           %a(href='#catalogs') Каталоги
+        %li<
+          %a(href='#jury') Журі
 
 .slide#start
   .slide__bg
@@ -64,12 +66,12 @@
   %h3 Організатори
   .partnerlist
     .parterline
-      %a.partner{href: "http://www.if.gov.ua"}
+      %span.partner
         %img{alt: "Управління культури, національностей та релігій Івано-Франківської облдержадміністрації", src: "/images/Iv-Fr-Oblast-web.png"}
         %p.double-cont
-          %span.third> Управління екології та природних ресурсів Івано&#8209;Франківської облдержадміністрації
-          %span.third> Управління культури, національностей та релігій Івано&#8209;Франківської облдержадміністрації
-          %span.third> Департамент освіти, науки і молодіжної політики Івано&#8209;Франківської облдержадміністрації
+          %a.third{href: 'http://www.if.gov.ua/news/19441'}> Управління екології та природних ресурсів Івано&#8209;Франківської облдержадміністрації
+          %a.third{href: 'http://www.if.gov.ua/?q=page&id=19469'}> Управління культури, національностей та релігій Івано&#8209;Франківської облдержадміністрації
+          %a.third{href: 'http://www.if.gov.ua/news/34762'}> Департамент освіти, науки і молодіжної політики Івано&#8209;Франківської облдержадміністрації
       %a.partner{href: "http://www.mvk.if.ua"}
         %img{alt: "Виконавчий комітет Івано-Франківської міської ради", src: "/images/Ivano-Frankivsk-mvk-web.png"}
         %p Виконавчий комітет <br> Івано-Франківської <br> міської ради
@@ -409,16 +411,16 @@
   %h3 Результати попередніх конкурсів
   .medals_container
 
-    %a.pdf{href: "/catalogs/Nature2006.pdf"}
+    %a.pdf{href: "https://issuu.com/biennialnature/docs/nature2006_reliz_crv_pdf"}
       2006
       %img{src: '/images/cat/2006.jpg'}
-    %a.pdf{href: "/catalogs/Nature2010.pdf"}
+    %a.pdf{href: "https://issuu.com/biennialnature/docs/nature2010.compressed"}
       2010
       %img{src: '/images/cat/2010.jpg'}
-    %a.pdf{href: "/catalogs/Nature2012.pdf"}
+    %a.pdf{href: "https://issuu.com/biennialnature/docs/nature2012_copy-__urves"}
       2012
       %img{src: '/images/cat/2012.jpg'}
-    %a.pdf{href: "/catalogs/Nature2016.pdf"}
+    %a.pdf{href: "https://issuu.com/biennialnature/docs/_______________2016_______________."}
       2016
       %img{src: '/images/cat/2016.jpg'}
 
