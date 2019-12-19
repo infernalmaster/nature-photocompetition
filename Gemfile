@@ -20,7 +20,7 @@ gem 'dm-validations'
 gem 'haml'
 gem 'pony'
 gem 'rake'
-gem 'sinatra', '>= 1.0'
+gem 'sinatra', '>= 2.0.1'
 gem 'liqpay', github: 'liqpay/sdk-ruby'
 
 group :production do
@@ -31,6 +31,6 @@ group :development do
 end
 
 # group :test do
-gem 'rack-test'
+gem 'rack-test', '>= 0.8.2'
 gem 'rspec', require: 'spec'
 # end
