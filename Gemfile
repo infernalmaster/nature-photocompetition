@@ -19,7 +19,7 @@ gem 'dm-timestamps'
 gem 'dm-validations'
 gem 'haml'
 gem 'pony'
-gem 'rake'
+gem 'rake', '>= 12.3.3'
 gem 'sinatra', '>= 1.0'
 gem 'liqpay', github: 'liqpay/sdk-ruby'
 
