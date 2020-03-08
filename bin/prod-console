@@ -1,0 +1,4 @@
+#!/bin/bash
+
+eval "$(docker-machine env nature)"
+docker exec -it nature-photocompetition_app_1 bundle exec irb -r './application.rb'

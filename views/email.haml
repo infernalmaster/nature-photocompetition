@@ -1,0 +1,66 @@
+!!!
+%html
+  %head
+    %meta{ content: "text/html; charset=utf-8", :"http-equiv" => "Content-Type" }
+    %title Реєстрація
+  %body
+    %p
+      ім'я:
+      = @profile.name
+    %p
+      прізвище:
+      = @profile.surname
+
+    %p
+      Адреса:
+      = @profile.zip_code
+      ,
+      = @profile.region
+      ,
+      = @profile.city
+      ,
+      = @profile.address
+
+    %p
+      Телефон:
+      = @profile.phone
+    %p
+      E-mail:
+      = @profile.email
+    %p
+      Веб сайт:
+      = @profile.site
+    %p
+      skype:
+      = @profile.skype
+    %p
+      facebook:
+      = @profile.facebook
+    %p
+      Фотографічні титули і приналежність до фотооб'єднань:
+      = @profile.position
+    %p
+      Член НСФХУ:
+      = @profile.photo_alliance ? 'Так': 'Ні'
+
+    %p
+      Дата народження:
+      = @profile.birthday ? @profile.birthday.strftime('%d.%m.%Y') : '-'
+
+    %p
+      Вікова категорія:
+      = @profile.age_category
+
+    %p
+      Статус оплати:
+      = @profile.payment_status
+
+    - @profile.photos.group_by(&:category).map do |category, photos|
+
+      %h4= category
+
+      - photos.each do |photo|
+        %a{href: "#{SiteConfig.url_base}#{photo.file.url}"}
+          %p
+            %img{src: "#{SiteConfig.url_base}#{photo.file.url}", style: "max-height: 300px; max-width: 300px"}
+          %p= photo.title

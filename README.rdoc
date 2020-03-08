@@ -1,0 +1,61 @@
+= Sinatra Application Template
+
+== Getting Started
+
+  bundle install
+  ruby application.rb
+
+
+== Console
+
+  docker exec -it nature-photocompetition_app_1 bundle exec irb -r './application.rb'
+
+  or
+
+  docker exec -it nature-photocompetition_app_1 ./console
+
+== Deploy
+
+  Run it first time to provision server:
+
+  docker-machine create --driver digitalocean --digitalocean-access-token=xx --digitalocean-size=1gb --digitalocean-region=fra1 nature
+
+  Then:
+
+  eval "$(docker-machine env nature)"
+  // create db
+  docker-compose build mongodb && docker-compose up --no-deps -d mongodb
+  // create app
+  docker-compose build app && docker-compose up --no-deps -d app
+
+== Check logs
+
+  docker ps
+  # pick container id from the list
+  docker container logs CONTAINER_ID --follow --tail 10
+
+== Thanks
+
+This project includes contributions from the following developers:
+
+  * garrensmith
+  * bryanwoods
+  * flexd
+  * mcollina
+
+(c) 2011 Nick Plante. This code is distributed under the MIT license.
+
+== TODO
+  * sandbox: 1
+
+== MAILER
+https://accounts.google.com/b/3/DisplayUnlockCaptcha
+
+==
+clean uploads folder
+```
+FileUtils.rm_rf('public/uploads')
+
+system('ls public/uploads')
+```
+

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+eval "$(docker-machine env nature)"
+docker-compose build app
+docker-compose up --no-deps -d app

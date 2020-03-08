@@ -1,0 +1,124 @@
+.take-part
+  .wrapper.take-part-content.js-take-part-content.active
+    %ul.steps
+      %li.steps__item.js-take-part__nav-item.active
+        %span Умови конкурсу
+      %li.steps__item.js-take-part__nav-item
+        %span Анкета
+      %li.steps__item.js-take-part__nav-item
+        %span Завантаження фото
+      %li.steps__item.js-take-part__nav-item
+        %span Оплата
+
+    .terms.take-part__step.js-take-part__step.active
+      = haml :_rules
+      %button.btn.btn--forward.js-agree-with-right Я погоджуюсь з умовами, продовжити
+
+    .form.take-part__step.js-take-part__step
+      %form.js-profile-form{action: '/save_profile', method: 'post'}
+
+        %fieldset>
+          .inputfield
+            %label Ім’я
+            %input{type: "text", name: "name", class: "validate[required,maxSize[50]]"}
+          .inputfield
+            %label Прізвище
+            %input{type: "text", name: "surname", class: "validate[required,maxSize[50]]"}
+
+          .inputfield
+            %label Поштовий індекс
+            %input{type: "text", name: "zip_code", class: "validate[required,custom[zip]]"}
+          .inputfield
+            %label Область
+            %select{name: "region", class: "validate[required]"}
+              %option
+              %option{value: "Автономна республіка Крим"} Автономна республіка Крим
+              %option{value: "Вінницька область"} Вінницька область
+              %option{value: "Волинська область"} Волинська область
+              %option{value: "Дніпропетровська область"} Дніпропетровська область
+              %option{value: "Донецька область"} Донецька область
+              %option{value: "Житомирська область"} Житомирська область
+              %option{value: "Закарпатська область"} Закарпатська область
+              %option{value: "Запорізька область"} Запорізька область
+              %option{value: "Івано-Франківська область"} Івано-Франківська область
+              %option{value: "Київська область"} Київська область
+              %option{value: "Кіровоградська область"} Кіровоградська область
+              %option{value: "Луганська область"} Луганська область
+              %option{value: "Львівська область"} Львівська область
+              %option{value: "Миколаївська область"} Миколаївська область
+              %option{value: "Одеська область"} Одеська область
+              %option{value: "Полтавська область"} Полтавська область
+              %option{value: "Рівненська область"} Рівненська область
+              %option{value: "Сумська область"} Сумська область
+              %option{value: "Тернопільська область"} Тернопільська область
+              %option{value: "Харківська область"} Харківська область
+              %option{value: "Херсонська область"} Херсонська область
+              %option{value: "Хмельницька область"} Хмельницька область
+              %option{value: "Черкаська область"} Черкаська область
+              %option{value: "Чернівецька область"} Чернівецька область
+              %option{value: "Чернігівська область"} Чернігівська область
+          .inputfield
+            %label Населений пункт
+            %input{type: "text", name: "city", class: "validate[required,maxSize[50]]"}
+          .inputfield
+            %label Вулиця, будинок, квартира
+            %input{type: "text", name: "address", class: "validate[required,maxSize[50]]"}
+
+          .inputfield
+            %label Телефон
+            %input{type: "text", name: "phone", class: "validate[required,maxSize[50]]"}
+          .inputfield
+            %label E-mail
+            %input{type: "email", name: "email", class: "validate[required,custom[email],maxSize[50]]"}
+
+        %fieldset
+          .inputfield
+            %label Веб сайт
+            %input{type: "text", name: "site", class: "validate[maxSize[50]]"}
+          .inputfield
+            %label Фотографічні титули і приналежність до фотооб’єднань
+            %input{type: "text", name: "position", class: "validate[maxSize[100]]"}
+          .inputfield
+            %label Skype
+            %input{type: "text", name: "skype", class: "validate[maxSize[50]]"}
+          .inputfield
+            %label Facebook
+            %input{type: "text", name: "facebook", class: "validate[maxSize[100]]"}
+          .inputfield
+            %label.with-pointer
+              %input{type: "checkbox", name: "photo_alliance", value: '1'}
+              Член НСФХУ
+          .inputfield
+            %label Дата народження
+            %input{type: "text", name: "birthday", class: "validate[required,custom[date]]"}
+
+      %button.btn.btn--back.js-back-from-profile Назад
+      %button.btn.btn--forward.btn--forward-short.js-send-profile Продовжити
+
+    .upload.take-part__step.js-take-part__step
+      %form.js-images-form{action: '/upload', method: 'post', enctype: "multipart/form-data"}
+
+        %p Тільки *.JPEG без стискання з наступними параметрами:8 BIT; RGB; мінімум 2400 px по довшій стороні. Не допускаєтся оформлення у вигляді полів,псевдопаспарту, рамок, тощо.
+
+        %p Завантажуйте фото у відповідні категорії. Якщо не бажаєте брати участь у деякий категоріях, то просто залиште їх пустими
+
+        - Photo::CATEGORIES.each_with_index do |category, ci|
+          %h4.cat-name= "Категорія «#{category}»"
+          .uploadwrap
+            - Photo::PER_CATEGORY.times do |pi|
+              - i = ci * Photo::PER_CATEGORY + pi
+              .uploadform.js-img-container
+                %input{name: "category#{i}", type: "hidden", value: category}
+                %input.preview-image-input.js-img-input{name: "image#{i}", type: "file", accept: "image/jpeg", id: "image_upload#{i}", class: "validate[groupRequired[files]]"}
+                %label.preview{for: "image_upload#{i}"}
+                  %button.dlt-photo.js-img-dlt{type: "button"} очистити
+                  %span НАТИСНІТЬ ЩОБ ВИБРАТИ ФОТО З ЖОРСТКОГО ДИСКУ
+                  %img.preview_image.js-img-preview
+                .inputfield
+                  %label Назва
+                  %input.js-img-title{name: "title#{i}", type: "text", class: "validate[maxSize[50]]"}
+
+            .clear
+
+      %button.btn.btn--back.js-back-from-photos Назад
+      %button.btn.btn--forward.btn--forward-short.js-send-photos Продовжити
