@@ -179,6 +179,8 @@ function initTakePart() {
           prgHide();
           if (response === 'success') {
             document.location.href = '/success'
+          } else if (response === 'pay') {
+            document.location.href = '/pay'
           } else {
             var $form = $(response)
             $('body').append($form)

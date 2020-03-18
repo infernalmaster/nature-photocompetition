@@ -119,7 +119,12 @@ post '/upload' do
 
       'success'
     else
-      @profile.payment_form
+      # uncomment next to enable payment
+      # @profile.payment_form
+
+      # make payment
+      send_mails
+      'pay'
     end
   else
     status 406
@@ -143,4 +148,8 @@ end
 
 get '/success' do
   haml :success
+end
+
+get '/pay' do
+  haml :pay
 end

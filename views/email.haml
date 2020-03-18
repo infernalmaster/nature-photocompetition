@@ -52,6 +52,10 @@
       = @profile.age_category
 
     %p
+      Ціна:
+      = @profile.free? ? 'безплатно' : @profile.rate
+
+    %p
       Статус оплати:
       = @profile.payment_status
 
