@@ -59,8 +59,6 @@ class Profile
     birthday <= DateTime.new(2004, 4, 24) ? '16 до 20р' : '15р і менше'
   end
 
-  protected
-
   def rate
     if photos.group_by(&:category).size > 1
       photo_alliance ? 150 : 200
@@ -68,6 +66,8 @@ class Profile
       photo_alliance ? 100 : 150
     end
   end
+
+  protected
 
   def order_id
     Time.now.to_s.parameterize + id.to_s
