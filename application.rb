@@ -124,7 +124,7 @@ post '/upload' do
 
       # make payment
       send_mails
-      'pay'
+      "pay/#{@profile.rate}"
     end
   else
     status 406
@@ -150,6 +150,8 @@ get '/success' do
   haml :success
 end
 
-get '/pay' do
+get '/pay/:rate' do
+  @rate = params[:rate]
+
   haml :pay
 end

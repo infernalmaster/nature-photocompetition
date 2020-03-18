@@ -179,8 +179,8 @@ function initTakePart() {
           prgHide();
           if (response === 'success') {
             document.location.href = '/success'
-          } else if (response === 'pay') {
-            document.location.href = '/pay'
+          } else if (response.split('/')[0] === 'pay') {
+            document.location.href = '/pay/' + response.split('/')[1]
           } else {
             var $form = $(response)
             $('body').append($form)
