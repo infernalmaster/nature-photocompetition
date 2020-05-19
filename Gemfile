@@ -4,10 +4,10 @@ source 'https://rubygems.org'
 gem 'rake'
 gem 'sinatra', '>= 1.0'
 
-gem 'mongoid'
+gem 'mongoid', '>= 7.0.5'
 
-gem 'carrierwave'
-gem 'carrierwave-mongoid'
+gem 'carrierwave', '>= 2.1.0'
+gem 'carrierwave-mongoid', '>= 1.3.0'
 
 gem 'haml'
 # gem 'rmagick'
