@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 gem 'rake'
-gem 'sinatra', '>= 1.0'
+gem 'sinatra', '>= 2.0.8.1'
 
 gem 'mongoid'
 
@@ -20,6 +20,6 @@ group :production do
 end
 
 # group :test do
-gem 'rack-test'
+gem 'rack-test', '>= 1.1.0'
 gem 'rspec', require: 'spec'
 # end
