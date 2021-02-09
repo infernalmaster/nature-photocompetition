@@ -6,8 +6,8 @@ gem 'sinatra', '>= 1.0'
 
 gem 'mongoid'
 
-gem 'carrierwave'
-gem 'carrierwave-mongoid'
+gem 'carrierwave', '>= 2.1.1'
+gem 'carrierwave-mongoid', '>= 1.3.0'
 
 gem 'haml'
 # gem 'rmagick'
