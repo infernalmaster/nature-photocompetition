@@ -16,7 +16,7 @@ gem 'liqpay', github: 'liqpay/sdk-ruby'
 gem 'pony'
 
 group :production do
-  gem 'puma'
+  gem 'puma', '>= 4.3.9'
 end
 
 # group :test do
