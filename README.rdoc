@@ -59,3 +59,48 @@ FileUtils.rm_rf('public/uploads')
 system('ls public/uploads')
 ```
 
+
+system('tar -zcvf archive.tar.gz public/uploads/')
+
+system 'cd public && tar -c -f  all.tar.gz uploads/'
+
+
+== CSV
+```
+require 'csv'
+
+fields = %w[name surname age_category birthday zip_code region city address phone email site photo_alliance position skype facebook paid created_at]
+
+csv_string = CSV.generate do |csv|
+  csv << fields
+  Profile.all.to_a.each do |p|
+    csv << fields.map { |f| p.send(f).to_s }
+  end
+end
+
+File.write('public/profiles.csv', csv_string)
+
+```
+
+
+```
+
+require 'csv'
+
+csv_string = CSV.generate do |csv|
+  csv << fields
+  Profile.all.to_a.uniq{ |p| fields[0..-2].map { |f| p.send(f).to_s }.join(',') }.each do |p|
+    csv << fields.map { |f| p.send(f).to_s }
+  end
+end
+
+File.write('public/profiles.csv', csv_string)
+```
+
+system 'cd public && tar -c -f  all.tar.gz uploads/'
+
+system 'cd public/uploads/images && tar -c -f foto-z-vysoty-ptashynoho-polotu.tar.gz foto-z-vysoty-ptashynoho-polotu/'
+
+http://form.biennalenature.org/uploads/images/foto-z-vysoty-ptashynoho-polotu.tar.gz
+http://form.biennalenature.org/uploads/images/peizazh-flora-i-fauna.tar.gz
+http://form.biennalenature.org/uploads/images/slid-liudyny.tar.gz
