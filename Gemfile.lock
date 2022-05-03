@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/liqpay/sdk-ruby.git
+  remote: https://github.com/liqpay/sdk-ruby.git
   revision: a7a990f1410bdfc281fcfc66828555b4bc1e6260
   specs:
     liqpay (0.0.2)
@@ -46,9 +46,12 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.1009)
-    mimemagic (0.3.4)
+    mimemagic (0.4.3)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.10.1)
     mini_mime (1.0.2)
+    mini_portile2 (2.8.0)
     minitest (5.14.0)
     mongo (2.11.3)
       bson (>= 4.4.2, < 5.0.0)
@@ -61,13 +64,17 @@ GEM
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.5.2)
+    nokogiri (1.13.4)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     pony (1.13.1)
       mail (>= 2.0)
     public_suffix (4.0.3)
     puma (4.3.3)
       nio4r (~> 2.0)
-    rack (2.2.2)
-    rack-protection (2.0.8.1)
+    racc (1.6.0)
+    rack (2.2.3)
+    rack-protection (2.2.0)
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -87,11 +94,11 @@ GEM
     rspec-support (3.9.2)
     ruby-vips (2.0.17)
       ffi (~> 1.9)
-    ruby2_keywords (0.0.2)
-    sinatra (2.0.8.1)
+    ruby2_keywords (0.0.5)
+    sinatra (2.2.0)
       mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.8.1)
+      rack (~> 2.2)
+      rack-protection (= 2.2.0)
       tilt (~> 2.0)
     temple (0.8.2)
     thread_safe (0.3.6)
